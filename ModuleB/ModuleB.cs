@@ -20,10 +20,13 @@ namespace Doy.Modules
         }
         public void Initialize()
         {
+            this.unityContainer.RegisterType<IVM_ModuleB,VM_ModuleB>();
+            this.unityContainer.RegisterType<IModuleBController,ModuleBController>();
             this.unityContainer.RegisterType<ModuleBView>();
+
             IRegion region = this.regionManager.Regions["RegionB"];
             var view = this.unityContainer.Resolve<ModuleBView>();
-            region.Add(view);
+            region.Add(view,"MB");
         }
     }
 }

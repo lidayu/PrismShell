@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Practices.Prism.Events;
 
 namespace Doy.Modules
 {
@@ -19,9 +20,10 @@ namespace Doy.Modules
     /// </summary>
     public partial class ModuleBView : UserControl
     {
-        public ModuleBView()
+        public ModuleBView(IVM_ModuleB viewModel)
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
     }
 }
